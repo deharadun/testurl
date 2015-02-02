@@ -1,0 +1,2 @@
+module WurlsHelper
+end

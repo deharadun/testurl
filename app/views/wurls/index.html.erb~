@@ -1,0 +1,39 @@
+<h1>Listing wurls</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Ourl</th>
+      <th>Turl</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wurls.each do |wurl| %>
+      <tr>
+        <td><%= wurl.ourl %></td>
+        <td><%= wurl.turl %></td>
+        <td><%= link_to 'Show', wurl,class: 'btn btn-success' %></td>
+        <td><%= link_to 'Edit', edit_wurl_path(wurl) ,class: 'btn btn-success'%></td>
+        <td><%= link_to 'Destroy', wurl, method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-success' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wurl', new_wurl_path %>
+
+<%=form_tag('/short_url' ,role: "form")%>
+ <div class="form-group">
+<input type="text" name="surl[long_url]">
+<input type="submit" class: 'btn btn-success'>
+</div>
+</form>
+<%=@wurlurl%>
+ <iframe height="500" width="500" src="<%=@wurlurl%>"></iframe> 
+
+ 
+
